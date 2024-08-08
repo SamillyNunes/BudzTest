@@ -25,9 +25,13 @@ Reproduzir nossa Home:
 
 :small_blue_diamond: Fidelidade com critérios e definições do Figma
 
-:small_blue_diamond: Arquitetura escolhida e utilização no projeto
+:small_blue_diamond: Utilização de arquitetura Clean no projeto
 
 :small_blue_diamond: Bibliotecas e referências externas utilizadas
+
+:small_blue_diamond: Responsividade e comportamentos para plataformas Android e iOS
+
+:small_blue_diamond: Animações e comportamentos dos componentes
 
 :small_blue_diamond: Qualquer contribuição para melhorar o resultado será bem vinda!
 <br>
