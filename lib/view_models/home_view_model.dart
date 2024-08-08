@@ -18,7 +18,10 @@ class HomeViewModel extends ChangeNotifier {
 
     try {
       pet = await homeInfoRepository.fetchPet();
+
       banners = await homeInfoRepository.fetchBanners();
+      banners.sort((a, b) => a.priority.compareTo(b.priority));
+
       categories = await homeInfoRepository.fetchCategories();
     } catch (e) {
       errorMessage = e.toString();
