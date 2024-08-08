@@ -10,12 +10,14 @@ class HomeViewModel extends ChangeNotifier {
   bool isLoading = false;
   String? errorMessage;
   PetModel? pet;
+  List<BannerModel> banners = [];
 
   Future fetchData() async {
     isLoading = true;
 
     try {
       pet = await homeInfoRepository.fetchPet();
+      banners = await homeInfoRepository.fetchBanners();
     } catch (e) {
       errorMessage = e.toString();
     } finally {

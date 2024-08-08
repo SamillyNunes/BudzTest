@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../view_models/home_view_model.dart';
+import '../components/banners_pages.dart';
 import '../components/info_card.dart';
 import '../components/pet_header.dart';
 
@@ -36,18 +37,16 @@ class _HomeViewState extends State<HomeView> {
           final pet = viewModel.pet!;
 
           return SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: size.width * 0.05,
-              ),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).viewPadding.top,
-                  ),
-                  PetHeader(pet: pet),
-                  SizedBox(height: size.height * .03),
-                  Row(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).viewPadding.top,
+                ),
+                PetHeader(pet: pet),
+                SizedBox(height: size.height * .03),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * .05),
+                  child: Row(
                     children: [
                       InfoCard(
                         label: 'Sexo',
@@ -65,8 +64,10 @@ class _HomeViewState extends State<HomeView> {
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: size.height * .03),
+                BannersPages(banners: viewModel.banners),
+              ],
             ),
           );
         },

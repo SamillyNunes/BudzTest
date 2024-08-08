@@ -30,4 +30,16 @@ class ApiService {
       throw Exception('Error when trying to fecth pet: $e');
     }
   }
+
+  Future<List<BannerModel>> fetchBanners() async {
+    try {
+      jsonData ??= await loadJson();
+
+      final banners = jsonData["banners"] as List;
+
+      return banners.map((banner) => BannerModel.fromJson(banner)).toList();
+    } catch (e) {
+      throw Exception('Error when trying to fecth pet: $e');
+    }
+  }
 }
