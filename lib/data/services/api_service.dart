@@ -39,7 +39,21 @@ class ApiService {
 
       return banners.map((banner) => BannerModel.fromJson(banner)).toList();
     } catch (e) {
-      throw Exception('Error when trying to fecth pet: $e');
+      throw Exception('Error when trying to fecth banners: $e');
+    }
+  }
+
+  Future<List<CategoryModel>> fetchCategories() async {
+    try {
+      jsonData ??= await loadJson();
+
+      final categories = jsonData["categories"] as List;
+
+      return categories
+          .map((category) => CategoryModel.fromJson(category))
+          .toList();
+    } catch (e) {
+      throw Exception('Error when trying to fecth categories: $e');
     }
   }
 }

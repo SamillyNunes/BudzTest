@@ -69,7 +69,7 @@ class _HomeViewState extends State<HomeView> {
                 SizedBox(height: size.height * .03),
                 BannersPages(banners: viewModel.banners),
                 SizedBox(height: size.height * .03),
-                const ExploreJourneyTab(),
+                ExploreJourneyTab(categories: viewModel.categories),
               ],
             ),
           );
