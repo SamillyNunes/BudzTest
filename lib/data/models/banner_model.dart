@@ -5,7 +5,7 @@ class BannerModel {
   final AudienceType audience;
   final bool status;
   final String partner;
-  final int priority;
+  final int? priority;
   final String link;
   final String? targetSpecie;
   final String imageUrl;
@@ -15,9 +15,9 @@ class BannerModel {
     required this.audience,
     required this.status,
     required this.partner,
-    required this.priority,
     required this.link,
     required this.imageUrl,
+    this.priority,
     this.targetSpecie,
   });
 

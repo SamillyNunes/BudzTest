@@ -26,7 +26,7 @@ class _BannersPageViewState extends State<BannersPageView> {
     return Column(
       children: [
         SizedBox(
-          height: size.height * .2,
+          height: size.height * .17,
           child: PageView.builder(
             controller: _controller,
             onPageChanged: (value) {

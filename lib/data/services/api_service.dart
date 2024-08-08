@@ -56,4 +56,18 @@ class ApiService {
       throw Exception('Error when trying to fecth categories: $e');
     }
   }
+
+  Future<BannerModel?> fetchSingleBanner() async {
+    try {
+      jsonData ??= await loadJson();
+
+      if (jsonData.containsKey("singleBanner")) {
+        return BannerModel.fromJson(jsonData["singleBanner"]);
+      }
+
+      return null;
+    } catch (e) {
+      throw Exception('Error when trying to fecth categories: $e');
+    }
+  }
 }

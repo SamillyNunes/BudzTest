@@ -1,7 +1,4 @@
-import 'package:budz_app/data/models/banner_model.dart';
-import 'package:budz_app/data/models/category_model.dart';
-
-import '../models/pet_model.dart';
+import '../models/models.dart';
 import '../services/api_service.dart';
 import 'home_info_repository.dart';
 
@@ -35,6 +32,16 @@ class HomeInfoRepositoryImpl implements HomeInfoRepository {
     try {
       final categories = await apiService.fetchCategories();
       return categories;
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
+  @override
+  Future<BannerModel?> fetchSingleBanner() async {
+    try {
+      final singleBanner = await apiService.fetchSingleBanner();
+      return singleBanner;
     } catch (e) {
       throw Exception(e);
     }

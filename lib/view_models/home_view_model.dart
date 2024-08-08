@@ -11,6 +11,7 @@ class HomeViewModel extends ChangeNotifier {
   String? errorMessage;
   PetModel? pet;
   List<BannerModel> banners = [];
+  BannerModel? singleBanner;
   List<CategoryModel> categories = [];
 
   Future fetchData() async {
@@ -20,9 +21,11 @@ class HomeViewModel extends ChangeNotifier {
       pet = await homeInfoRepository.fetchPet();
 
       banners = await homeInfoRepository.fetchBanners();
-      banners.sort((a, b) => a.priority.compareTo(b.priority));
+      banners.sort((a, b) => (a.priority ?? 9).compareTo((b.priority ?? 9)));
 
       categories = await homeInfoRepository.fetchCategories();
+
+      singleBanner = await homeInfoRepository.fetchSingleBanner();
     } catch (e) {
       errorMessage = e.toString();
     } finally {

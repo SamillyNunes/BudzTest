@@ -1,3 +1,4 @@
+import 'package:budz_app/views/components/banner_component.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -70,6 +71,15 @@ class _HomeViewState extends State<HomeView> {
                 BannersPageView(banners: viewModel.banners),
                 SizedBox(height: size.height * .03),
                 ExploreJourneyTab(categories: viewModel.categories),
+                if (viewModel.singleBanner != null)
+                  SizedBox(
+                    height: size.height * 0.17,
+                    child: BannerComponent(
+                      banner: viewModel.singleBanner!,
+                      isLastBanner: true,
+                    ),
+                  ),
+                SizedBox(height: size.height * .03),
               ],
             ),
           );
