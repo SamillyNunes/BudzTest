@@ -23,7 +23,7 @@
         "partner": "budz",
         "link": "budzapp://premium-plan",
         "imageURL": "https://budzappstagingstg.blob.core.windows.net/budzapp-staging-container/media/Premium_beneficio.jpg",
-        "targetSpecie": "all",
+        "targetSpecie": "all"
     },
     "pet": {
         "gender": "male",
