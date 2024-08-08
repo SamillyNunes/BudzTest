@@ -1,6 +1,8 @@
-import 'package:budz_app/view_models/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../view_models/home_view_model.dart';
+import '../components/pet_header.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -35,21 +37,10 @@ class _HomeViewState extends State<HomeView> {
           return SingleChildScrollView(
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Container(
-                      width: size.width * 0.2,
-                      height: size.width * 0.2,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(pet.photoUrl),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ],
+                SizedBox(
+                  height: MediaQuery.of(context).viewPadding.top,
                 ),
+                PetHeader(pet: pet),
               ],
             ),
           );
