@@ -1,7 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'data/repositories/repositories.dart';
+import 'data/services/api_service.dart';
+import 'view_models/home_view_model.dart';
+import 'views/home/home_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  final apiService = ApiService();
+
+  final HomeInfoRepository homeInfoRepository =
+      HomeInfoRepositoryImpl(apiService: apiService);
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => HomeViewModel(
+        homeInfoRepository: homeInfoRepository,
+      ),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Placeholder(),
+      home: const HomeView(),
     );
   }
 }

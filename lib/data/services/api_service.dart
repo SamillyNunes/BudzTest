@@ -7,10 +7,6 @@ import '../models/models.dart';
 const jsonFileDir = 'assets/json/budz_home.json';
 
 class ApiService {
-  ApiService() {
-    loadJson();
-  }
-
   dynamic jsonData;
 
   Future loadJson() async {
@@ -18,6 +14,8 @@ class ApiService {
       final response = await rootBundle.loadString(jsonFileDir);
 
       jsonData = json.decode(response);
+
+      return jsonData;
     } catch (e) {
       throw Exception('Something got wrong. Error stack message: $e');
     }
@@ -25,9 +23,7 @@ class ApiService {
 
   Future<PetModel> fetchPet() async {
     try {
-      if (jsonData == null) {
-        loadJson();
-      }
+      jsonData ??= await loadJson();
 
       return PetModel.fromJson(jsonData["pet"]);
     } catch (e) {
