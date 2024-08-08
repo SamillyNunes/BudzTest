@@ -1,3 +1,4 @@
+import 'package:budz_app/views/home/components/explore_journey_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -67,6 +68,8 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 SizedBox(height: size.height * .03),
                 BannersPages(banners: viewModel.banners),
+                SizedBox(height: size.height * .03),
+                const ExploreJourneyTab(),
               ],
             ),
           );
