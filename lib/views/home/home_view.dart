@@ -1,14 +1,12 @@
-import 'package:budz_app/core/app_colors.dart';
-import 'package:budz_app/views/components/banner_component.dart';
-import 'package:budz_app/views/components/tab_title.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../view_models/home_view_model.dart';
+import '../components/banner_component.dart';
 import '../components/banners_page_view.dart';
 import '../components/info_card.dart';
 import '../components/pet_header.dart';
-import '../components/tag_text.dart';
+import '../components/tab_title.dart';
 import 'components/article_info.dart';
 import 'components/explore_journey_tab.dart';
 

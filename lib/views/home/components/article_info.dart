@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/app_colors.dart';
 import '../../../data/models/article_model.dart';
+import '../../components/rounded_button.dart';
 import '../../components/tag_text.dart';
 
 class ArticleInfo extends StatelessWidget {
@@ -59,20 +59,9 @@ class ArticleInfo extends StatelessWidget {
               ),
             ),
           ),
-          IconButton(
+          RoundedButton(
+            icon: Icons.keyboard_arrow_right_rounded,
             onPressed: () {},
-            icon: Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: AppColors.blueLight,
-              ),
-              child: const Icon(
-                Icons.keyboard_arrow_right_rounded,
-                color: AppColors.blue,
-                size: 25,
-              ),
-            ),
           ),
         ],
       ),

@@ -17,8 +17,8 @@ class IndexIndicator extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeIn,
-      height: 10,
-      width: isCurrent ? 30 : 10,
+      height: 7,
+      width: isCurrent ? 21 : 7,
       margin: isLast ? null : const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         color: isCurrent ? AppColors.blueMedium : AppColors.greyLight,
