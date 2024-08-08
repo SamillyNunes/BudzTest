@@ -4,18 +4,18 @@ import '../../data/models/banner_model.dart';
 import 'banner_component.dart';
 import 'index_indicator.dart';
 
-class BannersPages extends StatefulWidget {
+class BannersPageView extends StatefulWidget {
   final List<BannerModel> banners;
-  const BannersPages({
+  const BannersPageView({
     super.key,
     required this.banners,
   });
 
   @override
-  State<BannersPages> createState() => _BannersPagesState();
+  State<BannersPageView> createState() => _BannersPageViewState();
 }
 
-class _BannersPagesState extends State<BannersPages> {
+class _BannersPageViewState extends State<BannersPageView> {
   final _controller = PageController(viewportFraction: 0.9);
   int activeIndex = 0;
 

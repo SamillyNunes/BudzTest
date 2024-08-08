@@ -1,8 +1,8 @@
-import 'package:budz_app/views/components/tab_title.dart';
-import 'package:budz_app/views/home/components/categories_page_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/models/category_model.dart';
+import '../../components/tab_title.dart';
+import 'categories_page_view.dart';
 
 class ExploreJourneyTab extends StatelessWidget {
   final List<CategoryModel> categories;

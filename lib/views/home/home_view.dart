@@ -1,11 +1,11 @@
-import 'package:budz_app/views/home/components/explore_journey_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../view_models/home_view_model.dart';
-import '../components/banners_pages.dart';
+import '../components/banners_page_view.dart';
 import '../components/info_card.dart';
 import '../components/pet_header.dart';
+import 'components/explore_journey_tab.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -67,7 +67,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                 ),
                 SizedBox(height: size.height * .03),
-                BannersPages(banners: viewModel.banners),
+                BannersPageView(banners: viewModel.banners),
                 SizedBox(height: size.height * .03),
                 ExploreJourneyTab(categories: viewModel.categories),
               ],
