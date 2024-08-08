@@ -46,4 +46,14 @@ class HomeInfoRepositoryImpl implements HomeInfoRepository {
       throw Exception(e);
     }
   }
+
+  @override
+  Future<List<ArticleModel>> fetchArticles() async {
+    try {
+      final articles = await apiService.fetchArticles();
+      return articles;
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
 }

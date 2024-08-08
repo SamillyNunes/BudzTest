@@ -13,6 +13,7 @@ class HomeViewModel extends ChangeNotifier {
   List<BannerModel> banners = [];
   BannerModel? singleBanner;
   List<CategoryModel> categories = [];
+  List<ArticleModel> articles = [];
 
   Future fetchData() async {
     isLoading = true;
@@ -26,6 +27,8 @@ class HomeViewModel extends ChangeNotifier {
       categories = await homeInfoRepository.fetchCategories();
 
       singleBanner = await homeInfoRepository.fetchSingleBanner();
+
+      articles = await homeInfoRepository.fetchArticles();
     } catch (e) {
       errorMessage = e.toString();
     } finally {

@@ -5,4 +5,5 @@ abstract class HomeInfoRepository {
   Future<List<BannerModel>> fetchBanners();
   Future<BannerModel?> fetchSingleBanner();
   Future<List<CategoryModel>> fetchCategories();
+  Future<List<ArticleModel>> fetchArticles();
 }

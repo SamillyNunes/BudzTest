@@ -70,4 +70,16 @@ class ApiService {
       throw Exception('Error when trying to fecth categories: $e');
     }
   }
+
+  Future<List<ArticleModel>> fetchArticles() async {
+    try {
+      jsonData ??= await loadJson();
+
+      final articles = jsonData["articles"] as List;
+
+      return articles.map((article) => ArticleModel.fromJson(article)).toList();
+    } catch (e) {
+      throw Exception('Error when trying to fecth categories: $e');
+    }
+  }
 }
