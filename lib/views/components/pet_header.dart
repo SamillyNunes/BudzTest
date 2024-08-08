@@ -22,7 +22,7 @@ class PetHeader extends StatelessWidget {
         Container(
           width: size.width * 0.2,
           height: size.width * 0.2,
-          margin: const EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.only(right: 20),
           decoration: BoxDecoration(
             // color: Colors.red,
             image: DecorationImage(
@@ -71,14 +71,11 @@ class PetHeader extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 5),
-          child: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.edit_outlined,
-              size: size.height * .035,
-            ),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.edit_outlined,
+            size: size.height * .035,
           ),
         ),
       ],

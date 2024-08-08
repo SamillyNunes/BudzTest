@@ -1,4 +1,10 @@
-enum PetSpecieType { dog }
+enum PetSpecieType {
+  dog('Cachorro');
+
+  final String description;
+
+  const PetSpecieType(this.description);
+}
 
 extension PetSpecieExtension on PetSpecieType {
   static PetSpecieType fromString(String specie) {

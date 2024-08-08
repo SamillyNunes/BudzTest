@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../view_models/home_view_model.dart';
+import '../components/info_card.dart';
 import '../components/pet_header.dart';
 
 class HomeView extends StatefulWidget {
@@ -35,13 +36,37 @@ class _HomeViewState extends State<HomeView> {
           final pet = viewModel.pet!;
 
           return SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).viewPadding.top,
-                ),
-                PetHeader(pet: pet),
-              ],
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.05,
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).viewPadding.top,
+                  ),
+                  PetHeader(pet: pet),
+                  SizedBox(height: size.height * .03),
+                  Row(
+                    children: [
+                      InfoCard(
+                        label: 'Sexo',
+                        value: pet.gender.description,
+                      ),
+                      const SizedBox(width: 10),
+                      const InfoCard(
+                        label: 'Idade',
+                        value: '1a3m',
+                      ),
+                      const SizedBox(width: 10),
+                      const InfoCard(
+                        label: 'Peso',
+                        value: '--',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           );
         },

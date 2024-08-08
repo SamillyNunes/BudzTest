@@ -1,4 +1,11 @@
-enum GenderType { male, female }
+enum GenderType {
+  male('Macho'),
+  female('Fêmea');
+
+  final String description;
+
+  const GenderType(this.description);
+}
 
 extension GenderExtension on GenderType {
   static GenderType fromString(String gender) {
