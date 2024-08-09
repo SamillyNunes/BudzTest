@@ -1,5 +1,17 @@
 # Teste para vaga dev. Flutter Pleno na Budz :dog:
 
+## 🛠️ Instalação 
+
+Para executar corretamente este projeto, siga o passo-a-passo abaixo:
+1. Instale o Flutter na sua máquina. [Você pode encontrar aqui a documentação de instalação](https://docs.flutter.dev/get-started/install?gad_source=1&gclid=CjwKCAjw_Na1BhAlEiwAM-dm7Co02k60rm1GsgMsP23xQoOJ_kgLUSmYU0XZyC2GSWOLeRC0OYV7UhoC1ygQAvD_BwE&gclsrc=aw.ds)
+    - Ao finalizar a instalação, para assegurar que foi instalado corretamente, rode ```flutter doctor``` na sua máquina. A resposta deve ser uma série de informações quanto a versão do Flutter, Dart, e se os requisitos estão sendo atendidos, como licença e outros.
+2. Abra o projeto na sua IDE de preferência
+3. Abra ou conecte algum dispositivo ou emulador para simular o projeto
+3. Abra o diretório raiz do projeto no terminal e rode o comando ```flutter run```
+    - Se você estiver com mais de um dispositivo conectado, será instruído a escolher um desses para rodar o projeto
+
+E agora é só usar! =) Para rodar os testes implementados, é só rodar o comando ```dart test```
+
 ## Desafio :exclamation:
 Reproduzir nossa Home:
 
