@@ -50,6 +50,7 @@ class _AppBottomMenuState extends State<AppBottomMenu> {
         });
       },
       elevation: 10,
+      type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.blue,
       unselectedItemColor: AppColors.textSecondary,
       showUnselectedLabels: true,
