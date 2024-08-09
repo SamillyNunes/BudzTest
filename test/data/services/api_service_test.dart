@@ -37,4 +37,15 @@ void main() {
     expect(pet.name, 'Baby');
     expect(pet.breed, 'Pinscher');
   });
+
+  test('fecthBanners method should return a List of BannerModel', () async {
+    const jsonString =
+        '{"banners":[{"audience": "all","status": true,"id": "P5H5K6K89J","partner": "budz","priority": 2,"link": "https://www.dnapets.com.br/?utm_source=budz&utm_medium=banner","targetSpecie": "all","imageURL": ""}]}';
+    when(mockAssetBundle.loadString(any)).thenAnswer((_) async => jsonString);
+
+    final banners = await apiService.fetchBanners();
+
+    expect(banners.length, 1);
+    expect(banners[0].id, 'P5H5K6K89J');
+  });
 }
