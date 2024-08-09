@@ -40,12 +40,23 @@ void main() {
 
   test('fecthBanners method should return a List of BannerModel', () async {
     const jsonString =
-        '{"banners":[{"audience": "all","status": true,"id": "P5H5K6K89J","partner": "budz","priority": 2,"link": "https://www.dnapets.com.br/?utm_source=budz&utm_medium=banner","targetSpecie": "all","imageURL": ""}]}';
+        '{"banners":[{"audience": "all","status": true,"id": "abababa","partner": "budz","priority": 2,"link": "https://www.dnapets.com.br/?utm_source=budz&utm_medium=banner","targetSpecie": "all","imageURL": ""}]}';
     when(mockAssetBundle.loadString(any)).thenAnswer((_) async => jsonString);
 
     final banners = await apiService.fetchBanners();
 
     expect(banners.length, 1);
-    expect(banners[0].id, 'P5H5K6K89J');
+    expect(banners[0].id, 'abababa');
+  });
+
+  test('fetchCategories should return a CategoryModel list', () async {
+    const jsonString =
+        '{"categories":[{"name": "Educação","id": "EE78","imageUrlSquare": ""}]}';
+    when(mockAssetBundle.loadString(any)).thenAnswer((_) async => jsonString);
+
+    final categories = await apiService.fetchCategories();
+
+    expect(categories.length, 1);
+    expect(categories[0].id, 'EE78');
   });
 }
