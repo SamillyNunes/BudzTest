@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../view_models/home_view_model.dart';
+import '../components/app_bottom_menu.dart';
 import '../components/banner_component.dart';
 import '../components/banners_page_view.dart';
 import '../components/info_card.dart';
@@ -32,6 +33,7 @@ class _HomeViewState extends State<HomeView> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      bottomNavigationBar: const AppBottomMenu(),
       body: Consumer<HomeViewModel>(
         builder: (context, viewModel, _) {
           if (viewModel.isLoading || viewModel.pet == null) {
