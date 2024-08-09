@@ -7,11 +7,14 @@ import '../models/models.dart';
 const jsonFileDir = 'assets/json/budz_home.json';
 
 class ApiService {
+  final AssetBundle bundle;
+  ApiService({AssetBundle? bundle}) : bundle = bundle ?? rootBundle;
+
   dynamic jsonData;
 
   Future loadJson() async {
     try {
-      final response = await rootBundle.loadString(jsonFileDir);
+      final response = await bundle.loadString(jsonFileDir);
 
       jsonData = json.decode(response);
 
