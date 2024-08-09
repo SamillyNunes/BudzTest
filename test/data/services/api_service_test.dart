@@ -59,4 +59,15 @@ void main() {
     expect(categories.length, 1);
     expect(categories[0].id, 'EE78');
   });
+
+  test('fetchArticles should return a ArticleModel list', () async {
+    const jsonString =
+        '{"articles":[{"categoryName": "Primeiros socorros","id": "AAEE12","colorCode": "#C5C94F","title": "Como desengaasgar","imageUrlSquare":""}]}';
+    when(mockAssetBundle.loadString(any)).thenAnswer((_) async => jsonString);
+
+    final articles = await apiService.fetchArticles();
+
+    expect(articles.length, 1);
+    expect(articles[0].id, 'AAEE12');
+  });
 }
