@@ -4,10 +4,17 @@ import '../../core/app_colors.dart';
 
 const iconsPngPath = 'assets/icons/png';
 
-class AppBottomMenu extends StatelessWidget {
+class AppBottomMenu extends StatefulWidget {
   const AppBottomMenu({
     super.key,
   });
+
+  @override
+  State<AppBottomMenu> createState() => _AppBottomMenuState();
+}
+
+class _AppBottomMenuState extends State<AppBottomMenu> {
+  int currentIndex = 0;
 
   BottomNavigationBarItem _menuItem({
     required String iconPath,
@@ -16,6 +23,7 @@ class AppBottomMenu extends StatelessWidget {
     return BottomNavigationBarItem(
       icon: Image.asset(
         iconPath,
+        color: AppColors.textSecondary,
       ),
       activeIcon: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -25,6 +33,7 @@ class AppBottomMenu extends StatelessWidget {
         ),
         child: Image.asset(
           iconPath,
+          color: AppColors.blue,
         ),
       ),
       label: label,
@@ -34,6 +43,12 @@ class AppBottomMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      currentIndex: currentIndex,
+      onTap: (value) {
+        setState(() {
+          currentIndex = value;
+        });
+      },
       elevation: 10,
       selectedItemColor: AppColors.blue,
       unselectedItemColor: AppColors.textSecondary,
