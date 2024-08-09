@@ -26,4 +26,15 @@ void main() {
 
     expect(data['pet']['name'], 'Baby');
   });
+
+  test('fecthPet method should return a PetModel object', () async {
+    const jsonString =
+        '{"pet":{"name":"Baby", "breed": "Pinscher", "gender": "female","id": "AABBCC0101","photoUrl": "","mainPet": true,"specie": "dog"}}';
+    when(mockAssetBundle.loadString(any)).thenAnswer((_) async => jsonString);
+
+    final pet = await apiService.fetchPet();
+
+    expect(pet.name, 'Baby');
+    expect(pet.breed, 'Pinscher');
+  });
 }
