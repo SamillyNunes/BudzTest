@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/app_colors.dart';
-
-const iconsPngPath = 'assets/icons/png';
+import '../../core/app_images.dart';
 
 class AppBottomMenu extends StatefulWidget {
   const AppBottomMenu({
@@ -56,10 +55,10 @@ class _AppBottomMenuState extends State<AppBottomMenu> {
       showUnselectedLabels: true,
       selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
       items: [
-        _menuItem(iconPath: '$iconsPngPath/home.png', label: 'Início'),
-        _menuItem(iconPath: '$iconsPngPath/grid_view.png', label: 'Jornadas'),
-        _menuItem(iconPath: '$iconsPngPath/buddy.png', label: 'Buddy IA'),
-        _menuItem(iconPath: '$iconsPngPath/person.png', label: 'Perfil'),
+        _menuItem(iconPath: AppImages.homeIcon, label: 'Início'),
+        _menuItem(iconPath: AppImages.gridViewIcon, label: 'Jornadas'),
+        _menuItem(iconPath: AppImages.buddyIcon, label: 'Buddy IA'),
+        _menuItem(iconPath: AppImages.personIcon, label: 'Perfil'),
       ],
     );
   }

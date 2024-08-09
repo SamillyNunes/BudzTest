@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/app_images.dart';
 import '../../../data/models/article_model.dart';
+import '../../components/fade_image.dart';
 import '../../components/rounded_button.dart';
 import '../../components/tag_text.dart';
 
@@ -30,11 +32,12 @@ class ArticleInfo extends StatelessWidget {
             width: size.width * 0.3,
             height: size.width * 0.3,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(article.imageUrl),
-                fit: BoxFit.cover,
-              ),
               borderRadius: BorderRadius.circular(15),
+            ),
+            child: FadeImage(
+              networkImageUrl: article.imageUrl,
+              placeholderImagePath: AppImages.placeholderImage,
+              borderRadius: 15,
             ),
           ),
           Expanded(

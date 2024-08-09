@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/app_images.dart';
 import '../../../data/models/category_model.dart';
+import '../../components/fade_image.dart';
 
 class CategoriesPageView extends StatefulWidget {
   final List<CategoryModel> categories;
@@ -36,11 +38,12 @@ class _CategoriesPageViewState extends State<CategoriesPageView> {
                 Container(
                   height: size.height * .17,
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(category.imageUrl),
-                      fit: BoxFit.cover,
-                    ),
                     borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: FadeImage(
+                    networkImageUrl: category.imageUrl,
+                    placeholderImagePath: AppImages.placeholderImage,
+                    borderRadius: 15,
                   ),
                 ),
                 const SizedBox(height: 10),

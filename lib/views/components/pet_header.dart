@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../core/app_colors.dart';
+import '../../core/app_images.dart';
 import '../../data/models/pet_model.dart';
 import '../../data/types/gender_type.dart';
+import 'fade_image.dart';
 
 class PetHeader extends StatelessWidget {
+  final PetModel pet;
+  final bool isLoading;
+
   const PetHeader({
     super.key,
     required this.pet,
+    this.isLoading = false,
   });
-
-  final PetModel pet;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +30,12 @@ class PetHeader extends StatelessWidget {
             height: size.width * 0.2,
             margin: const EdgeInsets.only(right: 20),
             decoration: BoxDecoration(
-              // color: Colors.red,
-              image: DecorationImage(
-                image: NetworkImage(pet.photoUrl),
-                fit: BoxFit.cover,
-              ),
               borderRadius: BorderRadius.circular(15),
+            ),
+            child: FadeImage(
+              networkImageUrl: pet.photoUrl,
+              placeholderImagePath: AppImages.dogPlaceholderImage,
+              borderRadius: 15,
             ),
           ),
           Expanded(

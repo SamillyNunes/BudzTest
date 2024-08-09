@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../core/app_images.dart';
 import '../../data/models/banner_model.dart';
+import 'fade_image.dart';
 
 class BannerComponent extends StatelessWidget {
   final BannerModel banner;
@@ -24,10 +26,11 @@ class BannerComponent extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          image: DecorationImage(
-            image: NetworkImage(banner.imageUrl),
-            fit: BoxFit.cover,
-          ),
+        ),
+        child: FadeImage(
+          networkImageUrl: banner.imageUrl,
+          placeholderImagePath: AppImages.placeholderImage,
+          borderRadius: 20,
         ),
       ),
     );
